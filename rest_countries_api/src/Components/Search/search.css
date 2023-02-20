@@ -1,0 +1,9 @@
+input[type="text"] {
+padding-top: 18px;
+padding-bottom: 18px;
+  padding-right: 270px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+  border: none;
+}
