@@ -3,6 +3,7 @@ import ".//App.css";
 import { Theme } from "./Components/Header/header";
 import { SearchBar } from "./Components/Search/search";
 import { FilterDropdown } from "./Components/Filter/filter";
+import {DisplayCountries } from "./Components/Countries/countries";
 
 
 export const App = () => {
@@ -13,6 +14,7 @@ export const App = () => {
       <SearchBar />
       <FilterDropdown />
       </div>
+      <DisplayCountries/>
     </div>
   );
 };

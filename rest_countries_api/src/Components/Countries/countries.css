@@ -1,0 +1,13 @@
+.grid-country{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem;
+    padding: 0 80px;
+   
+}
+.country-background{
+    background-color: #fff;
+}
+.grid-country img{
+    width: 264px;
+}
