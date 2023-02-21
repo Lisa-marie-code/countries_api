@@ -1,13 +1,34 @@
+:root{
+    --background-white:#f2f2f2;
+    --background:#fff;
+    --header-dark:#2B3844;
+  }
 .grid-country{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 2rem;
-    padding: 0 80px;
-   
+    padding: 0 80px; 
 }
-.country-background{
-    background-color: #fff;
+#each-country{
+    background-color: var(--background);
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+}
+#each-country h3,p{
+    padding-left: 24px;
+}
+#each-country p{
+    margin: 0;
 }
 .grid-country img{
-    width: 264px;
+    width: 274px;
+    height: 160px;
+    border-radius: 5px;
+}
+.capital{
+    padding-bottom: 24px;
+}
+
+.dark-theme{
+    background-color: var(--header-dark);
 }
