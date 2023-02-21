@@ -1,0 +1,12 @@
+.new-flag{
+    width: 400px;
+}
+.det-country{
+    display: flex;
+    flex-direction: row;
+    padding-left: 80px;
+    padding-top: 80px;
+}
+.back{
+    padding-left: 80px;
+}

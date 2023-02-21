@@ -32,3 +32,10 @@
 .dark-theme{
     background-color: var(--header-dark);
 }
+@media screen and (min-width: 320px) and (max-width:480px){
+    .grid-country{
+        grid-template-columns: repeat(1,274px);
+       padding: 0 55px;
+       
+    }
+}

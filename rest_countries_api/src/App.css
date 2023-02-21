@@ -14,7 +14,12 @@
   display: flex;
   justify-content: space-between;
   padding: 48px 80px;
+  
 }
-.dark-theme{
-background-color: var(--background-dark);
+
+@media screen and (min-width: 320px) and (max-width:480px){
+  .search_filter{
+    flex-direction: column;
+    padding: 20px 20px;
+  }
 }

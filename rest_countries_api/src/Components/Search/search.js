@@ -11,7 +11,7 @@ export const  SearchBar =({ onSearch }) =>{
   };
 
   return (
-    <input
+    <input className="input-field"
       type="text"
       placeholder="Search for a country..."
       value={searchTerm}

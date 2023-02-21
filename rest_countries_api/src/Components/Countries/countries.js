@@ -13,10 +13,15 @@ export const DisplayCountries = () => {
   console.log(data);
 
   return (
+  
+    
     <div className="grid-country" >
-       
-        {
-        data.map((res, index) => (
+ 
+  
+          
+   
+    {
+        data.map((res,index) => (
           <div key={index} id="each-country" >
               <img src={res.flag} alt="country_image" />
               <h3>{res.name}</h3>
@@ -26,9 +31,13 @@ export const DisplayCountries = () => {
             </div>
           
         ))}
+   
+    
        
+  
      
     </div>
+  
   );
 };
 

@@ -6,8 +6,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root{
+  --background-white:#f2f2f2;
+  --background:#fff;
+  --background-dark:#202C36;
+  
+  
 }
+.dark-theme{
+  background-color: var(--background-dark);
+  color: var(--background);
+  }
+  
