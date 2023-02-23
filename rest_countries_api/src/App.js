@@ -1,26 +1,16 @@
 import React from "react";
-import ".//App.css";
-import { Theme } from "./Components/Header/header";
-import { SearchBar } from "./Components/Search/search";
-import { FilterDropdown } from "./Components/Filter/filter";
-import { DisplayCountries } from "./Components/Countries/countries";
-import {CountryDetails} from "./Components/Detailed/detailed"
+import { Route, Routes } from "react-router-dom";
 
+import "./App.css";
+import CountryDetails from "./Components/Detailed/detailed";
+import Landing from "./Landing";
 
 export const App = () => {
   return (
-
-    
-      <div>
-        <Theme />
-        <div className="search_filter">
-          <SearchBar />
-          <FilterDropdown />
-        </div>
-        <DisplayCountries />
-       <CountryDetails/>
-      </div>
-   
+    <Routes>
+      <Route path="/" element={<Landing />}/>
+      <Route path="/details" element={<CountryDetails/>}/>
+    </Routes>
   );
 };
 

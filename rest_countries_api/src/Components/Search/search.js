@@ -2,12 +2,13 @@ import React,{ useState } from "react";
 import ".//search.css"
 
 
-export const  SearchBar =({ onSearch }) =>{
+export const  SearchBar =() =>{
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
-    onSearch(event.target.value);
+  
+    console.log(searchTerm);
   };
 
   return (

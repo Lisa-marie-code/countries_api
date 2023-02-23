@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import ".//detailed.css";
 
-export const CountryDetails = () => {
+const CountryDetails = () => {
   const [details, setDetails] = useState([]);
 
   useEffect(() => {
@@ -16,7 +17,7 @@ export const CountryDetails = () => {
 
   return (
     <div >
-      <p className="back">Back</p>
+      <Link to={"/"}><p className="back">Back</p></Link>
       {details.map((res, index) => (
        
         <div key={index} className="det-country">
@@ -39,4 +40,5 @@ export const CountryDetails = () => {
     </div>
   );
 };
+
 export default CountryDetails;
