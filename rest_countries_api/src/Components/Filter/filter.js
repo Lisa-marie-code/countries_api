@@ -5,7 +5,7 @@ export const FilterDropdown = (props) =>{
   const [selectedOption, setSelectedOption] = useState('');
   
 
-  const handleChange = (event) => {
+  const handleFilter = (event) => {
     const newOption = event.target.value;
     setSelectedOption(newOption);
     props.filterValueSelected(event.target.value);
@@ -15,7 +15,7 @@ export const FilterDropdown = (props) =>{
  const options = ['Africa', 'America', 'Asia', ' Europe', 'Oceania']
 
   return (
-    <select value={selectedOption} onChange={handleChange}>Filter by Region
+    <select value={selectedOption} onChange={handleFilter}>Filter by Region
       <option value="Filter by Region">Filter by Region</option>
       {options.map((option) => (
         <option key={option} value={option}>
