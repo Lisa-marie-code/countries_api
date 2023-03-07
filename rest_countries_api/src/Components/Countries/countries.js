@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 
 
 
-export const DisplayCountries = ({searchItem}) => {
+
+export const DisplayCountries = ({ searchItem }) => {
+
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
@@ -18,25 +20,23 @@ export const DisplayCountries = ({searchItem}) => {
   console.log(countries);
 
   const filterCountries = countries.filter((country) => {
-    return country.name.includes(searchItem)
-  })
+    return country.name.toLowerCase().includes(searchItem.toLowerCase());
+  });
 
   return (
-
-      <div className="grid-country">
-        {filterCountries.map((country) => (
-          <Link key={country.alpha3Code} to="details">
-            <div id="each-country">
-              <img src={country.flag} alt="country_image" />
-              <h3>{country.name}</h3>
-              <p>Population:{country.population}</p>
-              <p>Region:{country.region}</p>
-              <p className="capital">Capital:{country.capital}</p>
-            </div>
-          </Link>
-        ))}
-      </div>
-   
+    <div className="grid-country">
+      {filterCountries.map((country) => (
+        <Link key={country.alpha3Code} to="details">
+          <div id="each-country">
+            <img src={country.flag} alt="country_image" />
+            <h3>{country.name}</h3>
+            <p>Population:{country.population}</p>
+            <p>Region:{country.region}</p>
+            <p className="capital">Capital:{country.capital}</p>
+          </div>
+        </Link>
+      ))}
+    </div>
   );
 };
 

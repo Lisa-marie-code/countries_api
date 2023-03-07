@@ -13,6 +13,9 @@ select{
     padding-right: 47px;
     border-radius: 5px;
 }
+select option{
+  border: none;
+}
 @media screen and (min-width: 320px) and (max-width:480px){
     select {
         margin-top: 30px;

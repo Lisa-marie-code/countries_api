@@ -3,9 +3,16 @@
 }
 .det-country{
     display: flex;
-    flex-direction: row;
+   grid-template-columns: 2fr,1fr,1fr;
     padding-left: 80px;
     padding-top: 80px;
+}
+.det-country h1{
+    padding-left: 20px;
+}
+.domain-sides{
+    padding-top: 5%;
+    padding-left: 10%;
 }
 .back{
     padding-left: 80px;

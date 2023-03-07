@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-
 import "./App.css";
+import "./index.css"
 import CountryDetails from "./Components/Detailed/detailed";
 import Landing from "./Landing";
 

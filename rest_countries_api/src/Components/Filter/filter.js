@@ -1,21 +1,17 @@
 import React, { useState } from "react";
 import "./filter.css";
 
-export const FilterDropdown = (props) =>{
-  const [selectedOption, setSelectedOption] = useState('');
-  
+export const FilterDropdown = (props) => {
+  const [selectedOption, setSelectedOption] = useState("");
 
-  const handleFilter = (event) => {
-    const newOption = event.target.value;
-    setSelectedOption(newOption);
+  const handleChange = (event) => {
+    setSelectedOption(event.target.value);
     props.filterValueSelected(event.target.value);
-   
   };
-  
- const options = ['Africa', 'America', 'Asia', ' Europe', 'Oceania']
 
+  const options = ["Africa", "America", "Asia", " Europe", "Oceania"];
   return (
-    <select value={selectedOption} onChange={handleFilter}>Filter by Region
+    <select value={selectedOption} onChange={handleChange}>
       <option value="Filter by Region">Filter by Region</option>
       {options.map((option) => (
         <option key={option} value={option}>
@@ -24,7 +20,6 @@ export const FilterDropdown = (props) =>{
       ))}
     </select>
   );
-}
+};
 
-  
 export default FilterDropdown;
