@@ -2,16 +2,13 @@ import React, { useState } from "react";
 
 import ".//search.css";
 
-export const SearchBar = ({onSearch}) => {
-  const [searchItem, setSearchItem] = useState('');
+export const SearchBar = ({ onSearch }) => {
+  const [searchItem, setSearchItem] = useState("");
 
   const handleChange = (event) => {
     setSearchItem(event.target.value);
     onSearch(event.target.value);
-   
- 
   };
-  
 
   return (
     <div>
@@ -22,7 +19,6 @@ export const SearchBar = ({onSearch}) => {
         value={searchItem}
         onChange={handleChange}
       />
-      
     </div>
   );
 };

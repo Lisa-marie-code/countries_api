@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
+import { Link} from "react-router-dom";
 import "./countries.css";
-import { Link } from "react-router-dom";
 
 
 
 
-export const DisplayCountries = ({ searchItem }) => {
+
+
+export const DisplayCountries = ({ searchItem,filterValue }) => {
 
   const [countries, setCountries] = useState([]);
 
+
   useEffect(() => {
     fetch(
-      "https://restcountries.com/v2/all?fields=name,capital,population,flag,region,continent"
+      "https://restcountries.com/v2/all?fields=name,capital,population,flag,region,continent,subregion,topLevelDomain,currencies,languages"
     )
       .then((response) => response.json())
       .then((data) => setCountries(data))
@@ -25,14 +28,17 @@ export const DisplayCountries = ({ searchItem }) => {
 
   return (
     <div className="grid-country">
-      {filterCountries.map((country) => (
-        <Link key={country.alpha3Code} to="details">
+      {filterCountries.map((country, index) => (
+          <Link  className="no-underline" key={index} to={`/${country.name}/details`}
+            state={country} >
           <div id="each-country">
+            <div className="img-div">
             <img src={country.flag} alt="country_image" />
+            </div>
             <h3>{country.name}</h3>
-            <p>Population:{country.population}</p>
-            <p>Region:{country.region}</p>
-            <p className="capital">Capital:{country.capital}</p>
+            <p><b>Population: </b>{country.population}</p>
+            <p><b>Region: </b>{country.region}</p>
+            <p className="capital"><b>Capital: </b>{country.capital}</p>
           </div>
         </Link>
       ))}
