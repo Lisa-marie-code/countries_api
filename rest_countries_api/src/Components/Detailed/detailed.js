@@ -10,7 +10,7 @@ const CountryDetails = () => {
     <div>
       <Theme />
       <Link to={"/"} className="no-underline">
-        <p className="back">Back</p>
+        <button className="back">Back</button>
       </Link>
       <div class="det-country">
         <div class="img-div">

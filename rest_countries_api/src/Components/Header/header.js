@@ -9,7 +9,9 @@ export const Theme = () =>{
 
   useEffect(() => {
     const body = document.querySelector('body');
+    const header = document.querySelector('.header');
     body.classList.toggle('dark-theme', theme === 'dark');
+    header.classList.toggle('dark-theme', theme === 'dark')
   }, [theme]);
 
 const toggleTheme = () => {
@@ -18,13 +20,13 @@ const toggleTheme = () => {
 };
   return(
       <div>
-          <div className='title-bar'>
+          <header className='header'>
               <h2>Where in the world?</h2>
               <div>
               <h4 onClick={toggleTheme}>Dark Mode</h4>
               
               </div>
-          </div>
+          </header>
       </div>
   )
 }

@@ -1,24 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./countries.css";
 
-
-
-
-
-
-export const DisplayCountries = ({ searchItem,filterValue }) => {
-
+export const DisplayCountries = ({ searchItem }) => {
   const [countries, setCountries] = useState([]);
-
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch(
       "https://restcountries.com/v2/all?fields=name,capital,population,flag,region,continent,subregion,topLevelDomain,currencies,languages"
     )
       .then((response) => response.json())
-      .then((data) => setCountries(data))
+      .then((data) => {
+        setCountries(data)
+        setIsLoading(false);
+      })
       .catch((error) => console.error(error));
+
   }, []);
   console.log(countries);
 
@@ -26,19 +24,36 @@ export const DisplayCountries = ({ searchItem,filterValue }) => {
     return country.name.toLowerCase().includes(searchItem.toLowerCase());
   });
 
+  if (isLoading) {
+    return <div className="loading">Loading.........</div>;
+  }
+
   return (
     <div className="grid-country">
       {filterCountries.map((country, index) => (
-          <Link  className="no-underline" key={index} to={`/${country.name}/details`}
-            state={country} >
+        <Link
+          className="no-underline"
+          key={index}
+          to={`/${country.name}/details`}
+          state={country}
+        >
           <div id="each-country">
             <div className="img-div">
-            <img src={country.flag} alt="country_image" />
+              <img src={country.flag} alt="country_image" />
             </div>
             <h3>{country.name}</h3>
-            <p><b>Population: </b>{country.population}</p>
-            <p><b>Region: </b>{country.region}</p>
-            <p className="capital"><b>Capital: </b>{country.capital}</p>
+            <p>
+              <b>Population: </b>
+              {country.population}
+            </p>
+            <p>
+              <b>Region: </b>
+              {country.region}
+            </p>
+            <p className="capital">
+              <b>Capital: </b>
+              {country.capital}
+            </p>
           </div>
         </Link>
       ))}
