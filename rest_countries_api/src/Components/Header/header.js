@@ -10,8 +10,13 @@ export const Theme = () =>{
   useEffect(() => {
     const body = document.querySelector('body');
     const header = document.querySelector('.header');
+    const sections = document.querySelectorAll('.each-country');
     body.classList.toggle('dark-theme', theme === 'dark');
-    header.classList.toggle('dark-theme', theme === 'dark')
+    header.classList.toggle('dark-theme', theme === 'dark');
+   sections.forEach((section) => {
+    section.classList.toggle('dark-theme', theme === 'dark');
+   }
+   )
   }, [theme]);
 
 const toggleTheme = () => {

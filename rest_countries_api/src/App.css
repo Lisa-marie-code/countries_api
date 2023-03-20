@@ -5,16 +5,21 @@
 :root {
   --main-background-color: hsl(0, 0%, 98%);
   --element-background-color: hsl(0, 0%, 100%);
-  --element-color: #202C36;
+  --element-color: #131b22;
   --search-input-color: gray;
+  --text-color-light:#000;
+  --text-color-dark:#fff;
 }
 body.dark-theme{
   background-color: var(--element-color);
+  color: var(--text-color-dark);
+
 }
   body{
     font-family: 'Nunito Sans', sans-serif;
     background-color: var(--main-background-color);
     margin: 0;
+    color:var(--text-color-light) ;
   
  
   }

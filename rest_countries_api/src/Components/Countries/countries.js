@@ -37,7 +37,7 @@ export const DisplayCountries = ({ searchItem }) => {
           to={`/${country.name}/details`}
           state={country}
         >
-          <div id="each-country">
+          <section className="each-country">
             <div className="img-div">
               <img src={country.flag} alt="country_image" />
             </div>
@@ -54,7 +54,7 @@ export const DisplayCountries = ({ searchItem }) => {
               <b>Capital: </b>
               {country.capital}
             </p>
-          </div>
+          </section>
         </Link>
       ))}
     </div>

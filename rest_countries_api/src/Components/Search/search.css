@@ -2,6 +2,7 @@
 :root{
   --background-white:#f2f2f2;
   --background:#fff;
+  --background-dark:#2B3844;
 }
 
 input[type="text"] {
@@ -14,6 +15,10 @@ padding-bottom: 18px;
   border: none;
   border-radius: 5px;
 }
+input[type="text"] .dark-theme{
+  background-color: var(--background-dark);
+}
+
 @media screen and (min-width: 320px) and (max-width:480px){
 input[type="text"] {
   padding-right: 180px;
