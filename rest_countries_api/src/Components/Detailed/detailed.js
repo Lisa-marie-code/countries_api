@@ -1,12 +1,13 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Theme } from "../Header/header";
+import BorderCountries from "../Borders/border";
+
 import ".//detailed.css";
 
 const CountryDetails = () => {
   const { state } = useLocation();
 
-  
   return (
     <div>
       <Theme />
@@ -47,31 +48,19 @@ const CountryDetails = () => {
             <span class="details-2">
               <p>
                 <b>Top Level Domain: </b>
-                {state?.topLevelDomain[Object.keys(state?.topLevelDomain)]}
+                {state?.topLevelDomain}
               </p>
               <p>
                 <b>Currencies: </b>
-                {state?.currencies[Object.keys(state?.currencies)].name}
+                {state?.currencies.map((currency)=> currency.name).join(',')}
               </p>
               <p>
                 <b>Languages: </b>
-                {state?.languages.map(language => language.name).join(", ")}
+                {state?.languages.map((language) => language.name).join(", ")}
               </p>
             </span>
           </span>
-
-          {state?.borders && state?.borders.length > 0 && (
-            <div className="border">
-              <span className="point">Border Countries:</span>
-              <span className="buttons">
-                {state.borders.map((borderCountry) => (
-                  <button key={borderCountry} className="border-btn">
-                    {borderCountry}
-                  </button>
-                ))}
-              </span>
-            </div>
-          )}
+          <BorderCountries />
         </div>
       </div>
     </div>

@@ -5,8 +5,10 @@ import "./countries.css";
 export const DisplayCountries = ({ searchItem }) => {
   const [countries, setCountries] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
   const url =
-    "https://restcountries.com/v2/all?fields=name,capital,population,flag,region,continent,subregion,topLevelDomain,currencies,borders,languages,nativeName,namecodes";
+    "https://restcountries.com/v2/all?fields=name,capital,population,flag,region,continent,subregion,topLevelDomain,currencies,borders,languages,nativeName,countryCode";
+
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())
