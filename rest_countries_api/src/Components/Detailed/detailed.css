@@ -46,6 +46,11 @@
 .point {
   padding-left: 20px;
 }
+.border-btn{
+  padding: 12px 14px;
+}
+
+
 @media screen and (min-width: 320px) and (max-width: 480px) {
   .back {
     padding: 6px 24px;

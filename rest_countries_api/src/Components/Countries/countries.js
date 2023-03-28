@@ -5,18 +5,16 @@ import "./countries.css";
 export const DisplayCountries = ({ searchItem }) => {
   const [countries, setCountries] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
+  const url =
+    "https://restcountries.com/v2/all?fields=name,capital,population,flag,region,continent,subregion,topLevelDomain,currencies,borders,languages,nativeName,namecodes";
   useEffect(() => {
-    fetch(
-      "https://restcountries.com/v2/all?fields=name,capital,population,flag,region,continent,subregion,topLevelDomain,currencies,languages"
-    )
+    fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        setCountries(data)
+        setCountries(data);
         setIsLoading(false);
       })
       .catch((error) => console.error(error));
-
   }, []);
   console.log(countries);
 

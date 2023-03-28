@@ -6,6 +6,7 @@ import ".//detailed.css";
 const CountryDetails = () => {
   const { state } = useLocation();
 
+  
   return (
     <div>
       <Theme />
@@ -27,11 +28,11 @@ const CountryDetails = () => {
                 {state?.nativeName}
               </p>
               <p>
-                <b>Population:</b>
+                <b>Population: </b>
                 {state?.population}
               </p>
               <p>
-                <b>Region:</b>
+                <b>Region: </b>
                 {state?.region}
               </p>
               <p>
@@ -46,29 +47,33 @@ const CountryDetails = () => {
             <span class="details-2">
               <p>
                 <b>Top Level Domain: </b>
-                {state?.nativeName}
+                {state?.topLevelDomain[Object.keys(state?.topLevelDomain)]}
               </p>
               <p>
-                <b>Currencies:</b>
-                {state?.population}
+                <b>Currencies: </b>
+                {state?.currencies[Object.keys(state?.currencies)].name}
               </p>
               <p>
-                <b>Languages:</b>
-                {state?.region}
+                <b>Languages: </b>
+                {state?.languages.map(language => language.name).join(", ")}
               </p>
             </span>
           </span>
-          <div class="border">
-            <span class="point">Border Countries:</span>
-            <span class="buttons">
-              <button class="border-btn"></button>
-              <button class="border-btn"></button>
-              <button class="border-btn"></button>
-            </span>
-          </div>
+
+          {state?.borders && state?.borders.length > 0 && (
+            <div className="border">
+              <span className="point">Border Countries:</span>
+              <span className="buttons">
+                {state.borders.map((borderCountry) => (
+                  <button key={borderCountry} className="border-btn">
+                    {borderCountry}
+                  </button>
+                ))}
+              </span>
+            </div>
+          )}
         </div>
       </div>
-     
     </div>
   );
 };

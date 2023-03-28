@@ -12,15 +12,14 @@
   max-width: 1440px;
   margin: auto;
 }
-.loading{
-text-align: center;
-margin: auto;
-padding: 20px;
-font-weight: 900;
-font-size: 30px;
-
+.loading {
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  font-weight: 900;
+  font-size: 30px;
 }
-.img-div{
+.img-div {
   width: 100%;
   height: 160px;
 }
@@ -28,19 +27,37 @@ section {
   background-color: var(--background);
   border-radius: 5px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+}
+section .dark-theme {
+  background-color: var(--header-dark);
+}
+section b {
   color: var(--text-light);
 }
-section .dark-theme{
-  background-color: var(--header-dark);
+section b .dark-theme {
   color: var(--background);
 }
-.each-country h3,
+section p .dark-theme {
+  color: var(--background);
+}
+section p {
+  margin: 0;
+  color: var(--text-light);
+}
+section h3 {
+  color: var(--text-light);
+}
+section h3 .dark-theme {
+  color: var(--background);
+}
+section h3,
 p {
   padding-left: 24px;
 }
-.each-country p {
-  margin: 0;
-}
+
+
+
+
 .grid-country img {
   width: 100%;
   object-fit: cover;
@@ -50,7 +67,7 @@ p {
 .capital {
   padding-bottom: 24px;
 }
-.no-underline{
+.no-underline {
   text-decoration: none;
 }
 @media screen and (min-width: 320px) and (max-width: 480px) {
