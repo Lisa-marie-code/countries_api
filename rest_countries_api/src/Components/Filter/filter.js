@@ -1,14 +1,18 @@
 import React,{useState} from "react";
+
 import "./filter.css";
 
-export const FilterDropdown = ({ onSelect }) => {
+export const FilterDropdown = ({ handleFilter}) => {
   const [filterValue, setFilterValue] = useState("");
 
   const selectHandler = (event) => {
     const selectedValue = event.target.value;
     setFilterValue(selectedValue);
-    onSelect(selectedValue);
+    handleFilter(selectedValue);
   };
+
+
+
 
   const options = ["Africa", "America", "Asia", " Europe", "Oceania"];
   return (

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./countries.css";
 
-export const DisplayCountries = ({ searchItem }) => {
+
+export const DisplayCountries = ({ searchItem ,filtered}) => {
   const [countries, setCountries] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -20,13 +21,22 @@ export const DisplayCountries = ({ searchItem }) => {
   }, []);
   console.log(countries);
 
+  // const filterCountries = countries.filter((country) => {
+  //   return country.name.toLowerCase().includes(searchItem.toLowerCase())
+    
+  // });
   const filterCountries = countries.filter((country) => {
+    if (filtered && country.region !== filtered) {
+      return false;
+    }
     return country.name.toLowerCase().includes(searchItem.toLowerCase());
   });
-
+  
   if (isLoading) {
     return <div className="loading">Loading.........</div>;
   }
+
+
 
   return (
     <div className="grid-country">
