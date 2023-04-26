@@ -21,10 +21,7 @@ export const DisplayCountries = ({ searchItem ,filtered}) => {
   }, []);
   console.log(countries);
 
-  // const filterCountries = countries.filter((country) => {
-  //   return country.name.toLowerCase().includes(searchItem.toLowerCase())
-    
-  // });
+
   const filterCountries = countries.filter((country) => {
     if (filtered && country.region !== filtered) {
       return false;

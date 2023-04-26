@@ -8,6 +8,10 @@ import ".//detailed.css";
 const CountryDetails = () => {
   const { state } = useLocation();
 
+
+
+
+  
   return (
     <div>
       <Theme />
