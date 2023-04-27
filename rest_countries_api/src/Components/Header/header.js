@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FaMoon } from "react-icons/fa";
 import "./header.css";
 
 export const Theme = () => {
@@ -10,6 +11,7 @@ export const Theme = () => {
     const sections = document.querySelectorAll(".each-country");
     body.classList.toggle("dark-theme", theme === "dark");
     header.classList.toggle("dark-theme", theme === "dark");
+
     sections.forEach((section) => {
       section.classList.toggle("dark-theme", theme === "dark");
     });
@@ -32,8 +34,9 @@ export const Theme = () => {
     <div>
       <header className="header">
         <h2>Where in the world?</h2>
-        <div>
-          <h4 onClick={toggleTheme}>Dark Mode</h4>
+        <div className="moon">
+          <FaMoon className="moon-icon" />
+          <h3 onClick={toggleTheme}>Dark Mode</h3>
         </div>
       </header>
     </div>

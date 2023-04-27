@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Theme } from "../Header/header";
+import { FaArrowLeft } from "react-icons/fa";
 import BorderCountries from "../Borders/border";
 
 import ".//detailed.css";
@@ -8,15 +9,14 @@ import ".//detailed.css";
 const CountryDetails = () => {
   const { state } = useLocation();
 
-
-
-
-  
   return (
     <div>
       <Theme />
       <Link to={"/"} className="no-underline">
-        <button className="back">Back</button>
+      
+        <button className="back">
+        <FaArrowLeft className="moon-icon"/>
+          Back</button>
       </Link>
       <div class="det-country">
         <div class="img-div">
@@ -56,7 +56,7 @@ const CountryDetails = () => {
               </p>
               <p>
                 <b>Currencies: </b>
-                {state?.currencies.map((currency)=> currency.name).join(',')}
+                {state?.currencies.map((currency) => currency.name).join(",")}
               </p>
               <p>
                 <b>Languages: </b>
