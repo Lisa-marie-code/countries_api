@@ -5,6 +5,7 @@ import { FilterDropdown } from "./Components/Filter/filter";
 import { DisplayCountries } from "./Components/Countries/countries";
 import "./index.css";
 
+
 const Landing = () => {
   const [searchItem, setSearchItem] = useState("");
   const [filterByRegion, setFilterByRegion] = useState('');

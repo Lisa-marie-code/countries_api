@@ -14,7 +14,7 @@ export const SearchBar = ({ onSearch }) => {
 
   return (
     <div className="search-input-container">
-      <FaSearch />
+    
       <input
       
         className="input-field"
@@ -24,6 +24,7 @@ export const SearchBar = ({ onSearch }) => {
         onChange={handleChange}
         
       />
+        <FaSearch className="searchicon"/>
     </div>
   );
 };

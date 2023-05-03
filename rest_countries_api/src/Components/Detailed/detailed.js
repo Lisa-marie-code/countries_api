@@ -9,6 +9,8 @@ import ".//detailed.css";
 const CountryDetails = () => {
   const { state } = useLocation();
 
+  
+ 
   return (
     <div>
       <Theme />
@@ -18,16 +20,16 @@ const CountryDetails = () => {
         <FaArrowLeft className="moon-icon"/>
           Back</button>
       </Link>
-      <div class="det-country">
-        <div class="img-div">
+      <div className="det-country">
+        <div className="img-div">
           <img src={state?.flag} alt="flag" className="new-flag" />
         </div>
-        <div class="description">
+        <div className="description">
           <span>
             <h2>{state?.name}</h2>
           </span>
-          <span class="details-group">
-            <span class="details-1">
+          <span className="details-group">
+            <span className="details-1">
               <p>
                 <b>Native Name: </b>
                 {state?.nativeName}

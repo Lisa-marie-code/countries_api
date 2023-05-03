@@ -48,7 +48,8 @@ export const DisplayCountries = ({ searchItem ,filtered}) => {
             <div className="img-div">
               <img src={country.flag} alt="country_image" />
             </div>
-            <h3>{country.name}</h3>
+          <div className="country-div">
+          <h3 className="countryname">{country.name}</h3>
             <p>
               <b>Population: </b>
               {country.population}
@@ -61,6 +62,7 @@ export const DisplayCountries = ({ searchItem ,filtered}) => {
               <b>Capital: </b>
               {country.capital}
             </p>
+          </div>
           </section>
         </Link>
       ))}
