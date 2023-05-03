@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import "./border.css"
 
 export const BorderCountries = () => {
   const { state } = useLocation();
