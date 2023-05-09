@@ -4,28 +4,45 @@
   width: 560px;
   border-radius: 5px;
 }
+
 .det-country {
+  @include themify($themes) {
+    color: themed('colorText');
+  }
+
   display: flex;
   padding: 60px 60px 0 80px;
 }
 
-.back {
+
+.detail-background {
   @include themify($themes) {
     background-color: themed('colorBodyBackground');
+    height: 100vh;
+  }
+}
+
+.back {
+  @include themify($themes) {
+    background-color: themed('colorHeaderFooter');
     color: themed('colorText');
   }
+
   padding: 6px 24px;
   margin: 40px 0 0 80px;
   border-radius: 2px;
   border: none;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0962443);
 }
+
 .description {
   width: 85rem;
 }
+
 .description h2 {
   padding-left: 20px;
 }
+
 .details-group {
   display: flex;
   flex-direction: row;
@@ -33,16 +50,19 @@
   font-weight: 300;
   gap: 145px;
 }
+
 .details-1 {
   font-size: 14px;
   font-weight: 300;
 }
+
 .border {
   align-items: center;
   display: flex;
   gap: 10px;
   margin-top: 50px;
 }
+
 .buttons {
   display: flex;
   gap: 5px;
@@ -50,10 +70,12 @@
   flex-direction: row;
   justify-content: center;
 }
+
 .point {
   padding-left: 20px;
 }
-.border-btn{
+
+.border-btn {
   padding: 12px 14px;
 }
 
@@ -62,23 +84,27 @@
   .back {
     padding: 6px 24px;
     margin: 40px 0 0 28px;
-  
+
   }
+
   .new-flag {
     width: 320px;
   }
+
   .det-country {
     display: block;
     padding: 60px 0 0 28px;
   }
+
   .details-group {
     display: block;
     font-size: 14px;
     font-weight: 300;
   }
+
   .description {
     width: 320px;
     margin-top: 60px;
   }
- 
+
 }
