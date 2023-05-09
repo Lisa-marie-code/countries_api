@@ -1,8 +1,8 @@
 import React,{useState} from "react";
 
-import "./filter.css";
+import "./filter.scss";
 
-export const FilterDropdown = ({ handleFilter}) => {
+export const FilterDropdown = ({handleFilter}) => {
   const [filterValue, setFilterValue] = useState("");
 
   const selectHandler = (event) => {
@@ -14,7 +14,7 @@ export const FilterDropdown = ({ handleFilter}) => {
 
 
 
-  const options = ["Africa", "America", "Asia", " Europe", "Oceania"];
+  const options = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
   return (
     <select value ={filterValue} onChange={selectHandler} className="selected">
       <option value="Filter by Region" >Filter by Region</option>

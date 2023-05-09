@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./countries.css";
+import "./countries.scss";
+
 
 
 export const DisplayCountries = ({ searchItem ,filtered}) => {
   const [countries, setCountries] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  
 
   const url =
-    "https://restcountries.com/v2/all?fields=name,capital,population,flag,region,continent,subregion,topLevelDomain,currencies,borders,languages,nativeName,countryCode";
+    "https://restcountries.com/v2/all?fields=name,capital,population,flag,region,continent,subregion,topLevelDomain,currencies,borders,languages,nativeName,countryCode,code";
 
   useEffect(() => {
     fetch(url)

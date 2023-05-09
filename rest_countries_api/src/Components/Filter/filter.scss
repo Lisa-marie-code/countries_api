@@ -1,0 +1,32 @@
+@import "../Contexts/theme-context.scss";
+
+
+select{
+  @include themify($themes) {
+    background-color: themed('colorHeaderFooter');
+    padding: 18px 47px 18px 24px;
+    border: none;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+    border-radius: 5px;
+    color: themed('colorText');
+  }
+}
+
+select:hover {
+  cursor: pointer;
+}
+select:focus {
+  outline: none;
+}
+select option {
+  border: none;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  select {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 250px;
+    border-radius: 5px;
+  }
+}

@@ -1,6 +1,7 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
+@import "./Components/Contexts/theme-context.scss";
 
 :root {
   --main-background-color: hsl(0, 0%, 98%);
@@ -10,19 +11,14 @@
   --text-color-light:#000;
   --text-color-dark:#fff;
 }
-body.dark-theme{
-  background-color: var(--element-color);
-  color: var(--text-color-dark);
 
-}
   body{
     font-family: 'Nunito Sans', sans-serif;
     background-color: var(--main-background-color);
     margin: 0;
     color:var(--text-color-light) ;
-  
- 
   }
+  
 .search_filter{
   display: flex;
   justify-content: space-between;

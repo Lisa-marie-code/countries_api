@@ -1,12 +1,17 @@
+@import "./Components/Contexts/theme-context.scss";
 
 :root{
   --background-white:#f2f2f2;
   --background:#fff;
   --background-dark:#202C36;
   --header-color:#2B3844;
-  
-  
-  
+   
+}
+.App{
+  @include themify($themes) {
+    background-color: themed('colorBodyBackground');
+    height: 100vh;
+  }
 }
 .dark-theme{
   background-color: var(--background-dark);

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {FaSearch} from 'react-icons/fa'
 
 
-import "./search.css";
+import "./search.scss";
 
 export const SearchBar = ({ onSearch }) => {
   const [searchItem, setSearchItem] = useState("");

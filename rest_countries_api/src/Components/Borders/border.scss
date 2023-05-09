@@ -1,0 +1,11 @@
+@import "../Contexts/theme-context.scss";
+
+.border-btn{
+    @include themify($themes) {
+        background-color: themed('colorHeaderFooter');
+        border-radius: 5px;
+        color: themed('colorText');
+      }
+    border: none;
+ box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0962443);
+}

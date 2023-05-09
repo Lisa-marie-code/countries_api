@@ -3,7 +3,9 @@ import { Theme } from "./Components/Header/header";
 import { SearchBar } from "./Components/Search/search";
 import { FilterDropdown } from "./Components/Filter/filter";
 import { DisplayCountries } from "./Components/Countries/countries";
-import "./index.css";
+
+import "./index.scss";
+
 
 
 const Landing = () => {
@@ -21,7 +23,7 @@ const Landing = () => {
   };
  
   return (
-    <div>
+    <div className="App">
       <Theme />
       <div className="search_filter">
         <SearchBar onSearch={handleSearch} />
@@ -30,6 +32,7 @@ const Landing = () => {
          />
       </div>
       <DisplayCountries searchItem={searchItem}  filtered={filterByRegion} />
+   
     </div>
   );
 };

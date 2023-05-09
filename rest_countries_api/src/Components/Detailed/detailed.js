@@ -4,16 +4,16 @@ import { Theme } from "../Header/header";
 import { FaArrowLeft } from "react-icons/fa";
 import BorderCountries from "../Borders/border";
 
-import ".//detailed.css";
+import "./detailed.scss";
 
-const CountryDetails = () => {
+ const CountryDetails = () => {
   const { state } = useLocation();
 
   
  
   return (
     <div>
-      <Theme />
+      <Theme/>
       <Link to={"/"} className="no-underline">
       
         <button className="back">

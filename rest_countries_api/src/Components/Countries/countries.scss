@@ -1,0 +1,74 @@
+
+@import "../Contexts/theme-context.scss";
+
+section {
+  @include themify($themes) {
+    background-color: themed('colorHeaderFooter');
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0962443);
+  }
+}
+section p{
+  @include themify($themes) {
+    color: themed('colorText');
+    margin: 0;
+  }
+}
+section b{
+  @include themify($themes) {
+    color: themed('colorText');
+  }
+}
+section h3{
+  @include themify($themes) {
+    color: themed('colorText');
+    font-size:16px;
+  }
+}
+.grid-country {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 0 80px;
+  max-width: 1440px;
+  margin: auto;
+}
+.loading {
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  font-weight: 900;
+  font-size: 30px;
+}
+.img-div {
+  width: 100%;
+  height: 160px;
+}
+
+section h3,
+p {
+  padding-left: 24px;
+}
+
+
+
+
+.grid-country img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  border-radius: 5px;
+}
+.capital {
+  padding-bottom: 24px;
+}
+.no-underline {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .grid-country {
+    grid-template-columns: repeat(1, 274px);
+    padding: 0 55px;
+  }
+}
