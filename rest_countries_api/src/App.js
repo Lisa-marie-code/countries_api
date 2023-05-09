@@ -7,7 +7,18 @@ import Landing from "./Landing";
 import { ThemeContext } from "./Components/Contexts/theme-context";
 
 export const App = () => {
-  const [theme, setTheme] = useState("light");
+ 
+  const isBrowserDefaultDark = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const getDefaultTheme = () => {
+    const localStorageTheme = localStorage.getItem('theme');
+    const BrowserDefault = isBrowserDefaultDark() ? 'dark' : 'light';
+    return localStorageTheme || BrowserDefault
+  }
+
+  const [theme, setTheme] = useState(getDefaultTheme());
+
+
+
 
   return (
     <ThemeContext.Provider value={{theme,setTheme}}>
