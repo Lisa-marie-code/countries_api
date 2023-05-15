@@ -10,8 +10,8 @@
 .moon-icon {
   @include themify($themes) {
     color: themed('colorText');
-    padding: 4px 2px 0 0;
   }
+  padding: 4px 2px 0 0;
 }
 
 .header h3 {

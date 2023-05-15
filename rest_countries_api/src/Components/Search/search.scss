@@ -1,19 +1,14 @@
 @import "../Contexts/theme-context.scss";
 
-:root {
-  --background-white: #f2f2f2;
-  --background: #fff;
-  --background-dark: #2b3844;
-}
-
 input[type="text"] {
   @include themify($themes) {
     background-color: themed('colorHeaderFooter');
-    padding: 17px 30px;
+  }
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+  padding: 17px 30px;
     width: 100%;
     border: none;
     border-radius: 5px;
-  }
 }
 
 .searchicon {
@@ -29,7 +24,6 @@ input[type="text"]:focus {
 }
 .search-input-container {
   width: 400px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
   position: relative;
 }
 

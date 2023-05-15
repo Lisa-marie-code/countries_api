@@ -18,7 +18,7 @@
 .detail-background {
   @include themify($themes) {
     background-color: themed('colorBodyBackground');
-    height: 100vh;
+    min-height: 100vh;
   }
 }
 

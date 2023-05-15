@@ -50,7 +50,7 @@ const CountryDetails = () => {
                   {state?.capital}
                 </p>
               </span>
-              <span class="details-2">
+              <span className="details-2">
                 <p>
                   <b>Top Level Domain: </b>
                   {state?.topLevelDomain}

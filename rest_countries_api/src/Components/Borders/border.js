@@ -1,36 +1,47 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./border.scss"
+import "./border.scss";
+import  AllCountriesData from "../Contexts/country-context";
+
+
 
 export const BorderCountries = () => {
+  const countriesContext = useContext(AllCountriesData);
+  const countries  = countriesContext || {};
+  
+  
   const { state } = useLocation();
 
-  const location = useLocation();
 
-  const getBorders = location.state.borders;
-  const getNames = location.state.name;
-  console.log(getBorders);
-  console.log(getNames);
 
+  const getNameByCode = (alphacode) => {
+  let name = "";
+  if (countries && Array.isArray(countries)) {
+    name = countries.find((country) => country.code === alphacode);
+  }
+  return name;
+};
+
+  
 
   return (
     <div>
-      {state?.borders && state?.borders.length > 0 && (
-        <div className="border">
-          <span className="point">Border Countries:</span>
-          <span className="buttons">
+    {state?.borders && state?.borders.length > 0 && (
+      <div className="border">
+        <span className="point">Border Countries:</span>
+        <span className="buttons">
+          
+          {state?.borders.map((borderCode,index) => 
+          (
+            <Link key={index} to={`/border/${borderCode}`}>
+              <button className="border-btn"> {getNameByCode(borderCode)}</button>
+            </Link>
             
-            {state.borders.map((borderCountry) => 
-            (
-              <Link key={borderCountry} to={`/border/${borderCountry}`}>
-                <button className="border-btn">{borderCountry}</button>
-              </Link>
-              
-            ))}
-          </span>
-        </div>
-      )}
-    </div>
+          ))}
+        </span>
+      </div>
+    )}
+  </div>
   );
 };
 export default BorderCountries;

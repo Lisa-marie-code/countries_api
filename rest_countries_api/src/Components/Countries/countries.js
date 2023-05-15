@@ -10,7 +10,7 @@ export const DisplayCountries = ({ searchItem ,filtered}) => {
   
 
   const url =
-    "https://restcountries.com/v2/all?fields=name,capital,population,flag,region,continent,subregion,topLevelDomain,currencies,borders,languages,nativeName,countryCode,code";
+    "https://restcountries.com/v2/all?fields=name,capital,population,flag,region,continent,subregion,topLevelDomain,currencies,borders,languages,nativeName,code";
 
   useEffect(() => {
     fetch(url)
@@ -20,7 +20,7 @@ export const DisplayCountries = ({ searchItem ,filtered}) => {
         setIsLoading(false);
       })
       .catch((error) => console.error(error));
-  }, []);
+  }, [countries]);
   console.log(countries);
 
 

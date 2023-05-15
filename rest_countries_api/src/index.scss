@@ -4,8 +4,8 @@
 .App{
   @include themify($themes) {
     background-color: themed('colorBodyBackground');
-    height: 100%;
   }
+  min-height: 100vh;
 }
 
   
