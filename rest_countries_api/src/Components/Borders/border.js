@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./border.scss";
-import  AllCountriesData from "../Contexts/country-context";
+import  {AllCountriesData} from "../Contexts/country-context";
 
 
 

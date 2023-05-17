@@ -1,32 +1,29 @@
-import React,{ createContext,useState, useEffect } from 'react';
-import {BorderCountries} from "../Borders/border";
+import React, { createContext, useState, useEffect } from "react";
 
-const AllCountriesData = createContext();
+export const AllCountriesData = createContext();
 
- export const CountriesContext = ({children})=> {
+export const CountriesContext = ({ children }) => {
   const [countries, setCountries] = useState([]);
 
   const url =
     "https://restcountries.com/v2/all?fields=name,capital,population,flag,region,continent,subregion,topLevelDomain,currencies,borders,languages,nativeName,code";
 
-    useEffect(() => {
-      fetch(url)
-        .then((response) => response.json())
-        .then((data) => {
-          setCountries(data);
-          console.log(data);
-        })
-        .catch((error) => console.error(error));
-    }, []);
-    console.log(countries);
-
+  useEffect(() => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        setCountries(data);
+        console.log(data);
+      })
+      .catch((error) => console.error(error));
+  }, []);
+  console.log(countries);
 
   return (
-    <AllCountriesData.Provider value={{countries,setCountries}}>
-      <BorderCountries/>
-   {children}
+    <AllCountriesData.Provider value={{ countries, setCountries }}>
+      {children}
     </AllCountriesData.Provider>
   );
-}
+};
 
 export default AllCountriesData;

@@ -3,6 +3,7 @@
 input[type="text"] {
   @include themify($themes) {
     background-color: themed('colorHeaderFooter');
+    color: themed('colorText');
   }
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
   padding: 17px 30px;

@@ -20,7 +20,7 @@ export const DisplayCountries = ({ searchItem ,filtered}) => {
         setIsLoading(false);
       })
       .catch((error) => console.error(error));
-  }, [countries]);
+  }, []);
   console.log(countries);
 
 
