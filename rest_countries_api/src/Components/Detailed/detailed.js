@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Theme } from "../Header/header";
-import { FaArrowLeft } from "react-icons/fa";
+import { BsArrowLeft } from "react-icons/bs";
 import BorderCountries from "../Borders/border";
 
 import "./detailed.scss";
@@ -15,7 +15,7 @@ const CountryDetails = () => {
       <div className="detail-background">
         <Link to={"/"} className="no-underline">
           <button className="back">
-            <FaArrowLeft className="moon-icon" />
+            <BsArrowLeft className="moon-icon" />
             Back
           </button>
         </Link>
